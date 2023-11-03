@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <title>Registro en Red Social</title>
+</head>
+<body>
+    <h2>Formulario de Registro en Red Social</h2>
+    <form action="/includes/registro.php" method="post">
+        <label for="nombre">Nombre Completo:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="correo">Correo Electrónico:</label><br>
+        <input type="email" id="correo" name="correo" required><br>
+
+        <label for="contraseña">Contraseña:</label><br>
+        <input type="password" id="contraseña" name="contraseña" required><br>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
+
+        <label for="genero">Género:</label><br>
+        <select id="genero" name="genero" required>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+            <option value="no_decir">Prefiero no decir</option>
+        </select><br>
+
+        <label for="telefono">Teléfono:</label><br>
+        <input type="tel" id="telefono" name="telefono"><br>
+
+        <label for="biografia">Biografía:</label><br>
+        <textarea id="biografia" name="biografia" rows="4" cols="50"></textarea><br>
+
+        <input type="submit" value="Registrarse">
+    </form>
+</body>
+</html>
