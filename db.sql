@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 17-11-2023 a las 14:23:18
+-- Tiempo de generación: 17-11-2023 a las 14:32:18
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 7.3.0
 
@@ -244,7 +244,8 @@ CREATE TABLE `usuarios` (
   `correo_electronico` varchar(100) DEFAULT NULL,
   `contrasena` varchar(255) DEFAULT NULL,
   `fecha_de_registro` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `foto_perfil` varchar(255) DEFAULT NULL
+  `foto_perfil` varchar(255) DEFAULT NULL,
+  `fecha_de_nacimiento` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
