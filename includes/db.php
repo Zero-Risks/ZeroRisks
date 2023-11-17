@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db = 'redsocial';
+$db = 'redsocial1';
 $user = 'root';
 $pass = '';
 
