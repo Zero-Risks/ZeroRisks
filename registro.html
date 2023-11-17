@@ -6,19 +6,32 @@
     <title>Registro en Red Social</title>
 </head>
 <body>
+   
     <h2>Registro de Usuario</h2>
-    <form action="registro.php" method="POST">
-        <label>Nombre:</label>
-        <input type="text" name="nombre" required><br><br>
-        <label>Apellido:</label>
-        <input type="text" name="apellido" required><br><br>
-        <label>Correo Electrónico:</label>
-        <input type="email" name="correo" required><br><br>
-        <label>Contraseña:</label>
-        <input type="password" name="contrasena" required><br><br>
-        <label>Confirmar Contraseña:</label>
-        <input type="password" name="confirmar_contrasena" required><br><br>
-        <input type="submit" value="Registrarse">
+    <form method="post" action="/includes/registro.php">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required><br>
+        
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" required><br>
+        
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" name="correo" required><br>
+        
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" name="contrasena" required><br>
+        
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" name="fecha_nacimiento" required><br>
+        
+        <label for="genero">Género:</label>
+        <select name="genero" required>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+        </select><br>
+        
+        <input type="submit" value="Registrar">
     </form>
 </body>
 </html>

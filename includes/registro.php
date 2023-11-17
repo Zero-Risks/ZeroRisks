@@ -1,22 +1,26 @@
 <?php
-require 'db.php';
+include("conexion.php");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST['nombre'];
-    $correo = $_POST['correo'];
-    $contraseña = password_hash($_POST['contraseña'], PASSWORD_BCRYPT);
-    $fecha_nacimiento = $_POST['fecha_nacimiento'];
-    $genero = $_POST['genero'];
-    $telefono = $_POST['telefono'] ?? null;
-    $biografia = $_POST['biografia'] ?? null;
-    $rol_id = 1; // ID del rol de "Usuario Estándar"
+    // Recuperar datos del formulario
+    $nombre = $_POST["nombre"];
+    $apellido = $_POST["apellido"];
+    $correo = $_POST["correo"];
+    $contrasena = password_hash($_POST["contrasena"], PASSWORD_DEFAULT); // Hash de la contraseña
+    $fecha_nacimiento = $_POST["fecha_nacimiento"];
+    $genero = $_POST["genero"]; // Agregar el campo "género"
 
-    try {
-        $consulta = $conexion->prepare("INSERT INTO usuarios (nombre, correo, contraseña, fecha_nacimiento, genero, telefono, biografia, rol_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $consulta->execute([$nombre, $correo, $contraseña, $fecha_nacimiento, $genero, $telefono, $biografia, $rol_id]);
-        echo "Usuario registrado con éxito.";
-    } catch(PDOException $e) {
-        echo "Error de registro: " . $e->getMessage();
+    // Preparar la consulta SQL
+    $sql = "INSERT INTO usuarios (nombre, apellido, correo_electronico, contrasena, fecha_de_registro, fecha_de_nacimiento, genero) 
+            VALUES ('$nombre', '$apellido', '$correo', '$contrasena', NOW(), '$fecha_nacimiento', '$genero')";
+
+    // Ejecutar la consulta
+    if ($conexion->query($sql) === TRUE) {
+        echo "Usuario registrado con éxito";
+    } else {
+        echo "Error al registrar el usuario: " . $conexion->error;
     }
-}
+
+    // Cerrar la conexión a la base de datos
+    $conexion->close();
+
 ?>

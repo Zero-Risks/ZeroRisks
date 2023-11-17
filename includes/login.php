@@ -1,42 +1,37 @@
 <?php
-require 'db.php';
-session_start();
+session_start(); // Iniciar la sesión (si no se ha iniciado)
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $correo = $_POST['correo_electronico'];
-    $contraseña = $_POST['contraseña'];
+    // Incluir el archivo de conexión a la base de datos
+    include("conexion.php");
 
-    try {
-        $consulta = $conexion->prepare("SELECT usuarios.id, usuarios.contraseña, roles.nombre AS rol FROM usuarios INNER JOIN roles ON usuarios.rol_id = roles.id WHERE correo_electronico = ?");
-        $consulta->execute([$correo]);
-        $usuario = $consulta->fetch(PDO::FETCH_ASSOC);
+    // Recuperar datos del formulario
+    $correo = $_POST["correo"];
+    $contrasena = $_POST["contrasena"];
 
-        if ($usuario && password_verify($contraseña, $usuario['contraseña'])) {
-            // Iniciar sesión
-            $_SESSION['usuario_id'] = $usuario['id'];
-            $_SESSION['rol'] = $usuario['rol'];
+    // Consulta SQL para buscar el usuario por correo electrónico
+    $sql = "SELECT * FROM usuarios WHERE correo_electronico = '$correo'";
 
-            // Redirección basada en el rol
-            switch ($_SESSION['rol']) {
-                case 'Administrador':
-                    header('Location: ../views/admin/inicio.html');
-                    exit();
-                case 'Moderador':
-                    header('Location: moderator_dashboard.php');
-                    exit();
-                case 'Usuario Estándar':
-                    header('Location: user_dashboard.php');
-                    exit();
-                // Añadir más casos según sea necesario
-                default:
-                    header('Location: index.php'); // Página de inicio o alguna otra página por defecto
-                    exit();
-            }
+    $resultado = $conexion->query($sql);
+
+    if ($resultado->num_rows == 1) {
+        // El usuario existe, verificar la contraseña
+        $fila = $resultado->fetch_assoc();
+        if (password_verify($contrasena, $fila["contrasena"])) {
+            // Contraseña válida, iniciar sesión
+            $_SESSION["usuario_id"] = $fila["id"];
+            $_SESSION["usuario_nombre"] = $fila["nombre"];
+            header("Location: ../views/admin/inicio.html"); // Redirigir a la página de inicio después del inicio de sesión
         } else {
-            echo "Correo o contraseña incorrectos.";
+            // Contraseña incorrecta
+            echo "Contraseña incorrecta. Inténtalo de nuevo.";
         }
-    } catch(PDOException $e) {
-        echo "Error de inicio de sesión: " . $e->getMessage();
+    } else {
+        // El usuario no existe
+        echo "El usuario con ese correo electrónico no existe.";
     }
+
+    // Cerrar la conexión a la base de datos
+    $conexion->close();
 }
 ?>
