@@ -3,11 +3,11 @@ require 'db.php';
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $correo = $_POST['correo'];
+    $correo = $_POST['correo_electronico'];
     $contraseña = $_POST['contraseña'];
 
     try {
-        $consulta = $conexion->prepare("SELECT usuarios.id, usuarios.contraseña, roles.nombre AS rol FROM usuarios INNER JOIN roles ON usuarios.rol_id = roles.id WHERE correo = ?");
+        $consulta = $conexion->prepare("SELECT usuarios.id, usuarios.contraseña, roles.nombre AS rol FROM usuarios INNER JOIN roles ON usuarios.rol_id = roles.id WHERE correo_electronico = ?");
         $consulta->execute([$correo]);
         $usuario = $consulta->fetch(PDO::FETCH_ASSOC);
 

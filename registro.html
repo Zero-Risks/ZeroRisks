@@ -6,31 +6,18 @@
     <title>Registro en Red Social</title>
 </head>
 <body>
-    <h2>Formulario de Registro</h2>
-    <form action="/includes/registro.php" method="post">
-        <label for="nombre">Nombre Completo:</label><br>
-        <input type="text" id="nombre" name="nombre" required><br>
-
-        <label for="correo">Correo Electrónico:</label><br>
-        <input type="email" id="correo" name="correo" required><br>
-
-        <label for="contraseña">Contraseña:</label><br>
-        <input type="password" id="contraseña" name="contraseña" required><br>
-
-        <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
-        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
-
-        <label for="genero">Género:</label><br>
-        <select id="genero" name="genero" required>
-            <option value="masculino">Masculino</option>
-            <option value="femenino">Femenino</option>
-            <option value="otro">Otro</option>
-            <option value="no_decir">Prefiero no decir</option>
-        </select><br>
-
-        <label for="telefono">Teléfono:</label><br>
-        <input type="tel" id="telefono" name="telefono"><br>
-
+    <h2>Registro de Usuario</h2>
+    <form action="registro.php" method="POST">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required><br><br>
+        <label>Apellido:</label>
+        <input type="text" name="apellido" required><br><br>
+        <label>Correo Electrónico:</label>
+        <input type="email" name="correo" required><br><br>
+        <label>Contraseña:</label>
+        <input type="password" name="contrasena" required><br><br>
+        <label>Confirmar Contraseña:</label>
+        <input type="password" name="confirmar_contrasena" required><br><br>
         <input type="submit" value="Registrarse">
     </form>
 </body>
