@@ -34,7 +34,7 @@ $conexion->close();
                     <!-- Resto del formulario -->
                     <div class="foto-perfil">
                         <?php
-                        $rutaBaseImagenes = "../../../controllers/uploads";
+                        $rutaBaseImagenes = "../../controllers/uploads";
                         $rutaCompletaImagen = $rutaBaseImagenes . $foto_perfil;
                         if (file_exists($rutaCompletaImagen)) {
                             echo '<img src="' . $rutaCompletaImagen . '" alt="Foto de perfil">';
