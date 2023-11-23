@@ -1,10 +1,12 @@
 <?php
 include '../includes/conexion.php'; // Asegúrate de que este archivo contiene la conexión a tu base de datos
 
+session_start();
+$usuario_id = $_SESSION['usuario_id']; // Asegúrate de que el ID del usuario esté almacenado en la sesión
+
 // Verificar si el formulario ha sido enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los valores del formulario
-    $usuario_id = $_POST['usuario_id'];
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $correo_electronico = $_POST['correo_electronico'];
@@ -14,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Manejar la carga de la foto de perfil
     $foto_perfil = '';
     if (isset($_FILES['foto_perfil']) && $_FILES['foto_perfil']['error'] == 0) {
-        $carpeta_destino = "uploads/"; // Asegúrate de que esta carpeta existe y tiene permisos de escritura
+        $carpeta_destino = "uploads/";
         $nombre_archivo = basename($_FILES["foto_perfil"]["name"]);
         $ruta_archivo = $carpeta_destino . $nombre_archivo;
         $tipo_archivo = strtolower(pathinfo($ruta_archivo, PATHINFO_EXTENSION));
@@ -22,23 +24,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verificar si el archivo es una imagen
         $check = getimagesize($_FILES["foto_perfil"]["tmp_name"]);
         if($check !== false) {
-            // Verificar tamaño del archivo
-            if ($_FILES["foto_perfil"]["size"] > 500000) { // 500 KB como límite
-                echo "El archivo es demasiado grande.";
-                exit;
-            }
-
-            // Permitir ciertos formatos de archivo
-            if($tipo_archivo != "jpg" && $tipo_archivo != "png" && $tipo_archivo != "jpeg" && $tipo_archivo != "gif" ) {
-                echo "Solo se permiten archivos JPG, JPEG, PNG y GIF.";
+            // Verificar tamaño y tipo del archivo
+            if ($_FILES["foto_perfil"]["size"] > 500000 || !in_array($tipo_archivo, ['jpg', 'png', 'jpeg', 'gif'])) {
+                echo "Archivo no permitido.";
                 exit;
             }
 
             // Intentar cargar el archivo
             if (move_uploaded_file($_FILES["foto_perfil"]["tmp_name"], $ruta_archivo)) {
-                $foto_perfil = $ruta_archivo;
+                $foto_perfil = $nombre_archivo;
             } else {
-                echo "Hubo un error al cargar tu archivo.";
+                echo "Error al cargar tu archivo.";
                 exit;
             }
         } else {
@@ -57,12 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             foto_perfil = ? 
             WHERE id = ?";
 
-    // Preparar y ejecutar la consulta
     if ($stmt = $conexion->prepare($sql)) {
         $stmt->bind_param("ssssssi", $nombre, $apellido, $correo_electronico, $fecha_de_nacimiento, $genero, $foto_perfil, $usuario_id);
 
         if ($stmt->execute()) {
-            echo "Perfil actualizado correctamente";
+            // Redireccionar a la página de perfil o mostrar mensaje de éxito
+            header("Location: perfil.php");
+            exit;
         } else {
             echo "Error al actualizar el perfil: " . $stmt->error;
         }
@@ -74,4 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conexion->close();
+
+// Cargar los datos actuales del usuario para mostrar en el formulario
+include 'cargar_datos_usuario.php';
 ?>
