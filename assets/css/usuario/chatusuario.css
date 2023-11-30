@@ -235,9 +235,32 @@
 
 
   /*chat*/
-  .chat-container {
-    max-width: 500px;
+.chat-container1 {
+    display: flex;
+    max-width: 800px;
     margin: 15px 270px;
+}
+
+.chat-list {
+    flex: 1;
+    max-width: 200px;
+    background-color: #eee;
+    overflow-y: auto;
+}
+
+.chat {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.chat:hover {
+    background-color: #ddd;
+}
+
+.chat-messages {
+    flex: 2;
+    max-width: 600px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -251,7 +274,7 @@
     text-align: center;
 }
 
-.chat-messages {
+.chat-messages-container {
     padding: 10px;
     max-height: 300px;
     overflow-y: auto;
