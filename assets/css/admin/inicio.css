@@ -182,6 +182,8 @@ main {
   padding: 20px 300px 10px 300px;
 }
 
+/*publicaciones */
+
 .cuadro-crear-publicacion {
   display: block;
   border: 1px solid #ccc;
@@ -195,8 +197,6 @@ main {
   background-color: #f0f0f0;
 }
 
-
-/*publicaciones */
 .publicaciones {
   flex: 2;
   margin-right: 20px;
