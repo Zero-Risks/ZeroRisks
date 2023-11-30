@@ -224,9 +224,11 @@ main {
 }
 
 .nav-link {
-  justify-content: flex-start; /* Alinea el contenido al principio del contenedor flex */
+  justify-content: flex-start;
+  /* Alinea el contenido al principio del contenedor flex */
 }
 
 .navbar .link-text {
-  display: inline; /* Hacer que el texto esté siempre visible */
+  display: inline;
+  /* Hacer que el texto esté siempre visible */
 }
