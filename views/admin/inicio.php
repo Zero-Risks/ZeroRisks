@@ -153,7 +153,7 @@ foreach ($publicaciones as &$publicacion) {
         <section class="crear-publicacion">
             <a href="/views/admin/publicaciones/crear_publi.html" class="cuadro-crear-publicacion">
                 <div>
-                    <p>¿Que estas pensando?</p>
+                    <p>¿Qué estás pensando?</p>
                 </div>
             </a>
         </section>
@@ -169,16 +169,71 @@ foreach ($publicaciones as &$publicacion) {
                 </div>
                 <p><?php echo $publicacion['contenido']; ?></p>
                 <div class="interacciones">
-                    <button>Me gusta</button>
-                    <button>Comentar</button>
-                    <button>Compartir</button>
+                    <!-- Enlace para la reacción -->
+                    <div class="interacciones">
+                        <a href="#" class="reaccion">Reaccionar</a>
+                        <div class="opciones-reaccion">
+                            <a href="#" class="opcion-reaccion opcion1"></a>
+                            <a href="#" class="opcion-reaccion opcion2"></a>
+                            <a href="#" class="opcion-reaccion opcion3"></a>
+                        </div>
+                    </div>
+
+                    <a href="comentar.php?id=<?php echo $publicacion['id']; ?>">Comentarios</a>
+                    <a href="otro_apartado.php?id=<?php echo $publicacion['id']; ?>">Compartir</a>
                 </div>
             </article>
             <?php endforeach; ?>
             <!-- Otras publicaciones similares -->
         </section>
-
     </main>
+
+    <script>
+    < script src = "https://code.jquery.com/jquery-3.6.0.min.js" >
+    </script>
+
+    <!-- HTML -->
+<!-- ... -->
+
+<!-- Agrega jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $('.opcion-reaccion').on('click', function(e) {
+        e.preventDefault();
+        const publicacionId = obtenerPublicacionId(); // Obtener el ID de la publicación
+        const tipoReaccion = $(this).data('tipo-reaccion'); // Obtener el tipo de reacción de los atributos de datos
+
+        // Realizar una petición AJAX para guardar la reacción en la base de datos
+        $.ajax({
+            type: 'POST',
+            url: 'guardar_reaccion.php', // Ruta al archivo PHP que procesa la inserción en la tabla me_gusta
+            data: {
+                usuario_id: 1, // Reemplaza con el ID del usuario actual
+                publicacion_id: publicacionId,
+                tipo_reaccion: tipoReaccion
+            },
+            success: function(response) {
+                // Manejar la respuesta del servidor (puede ser un mensaje de éxito o error)
+                console.log(response);
+            },
+            error: function(err) {
+                console.error('Error:', err);
+            }
+        });
+    });
+
+    // Función para obtener el ID de la publicación
+    function obtenerPublicacionId() {
+        // Lógica para obtener el ID de la publicación
+        // Puedes recuperar el ID desde el DOM, por ejemplo:
+        return $('.publicacion').data('publicacion-id'); // Suponiendo que la clase "publicacion" contiene el ID de la publicación
+    }
+</script>
+
+<!-- ... -->
+
+
 
 </body>
 
