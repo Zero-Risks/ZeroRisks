@@ -1,17 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/assets/js/admin/inicio.js"></script>
-    <script src="https://kit.fontawesome.com/9d12871b61.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/assets/css/usuario/inicio.css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/usuario/chatusuario.css">
+    <title>chats</title>
 </head>
-
 <body>
     <nav class="navbar">
         <ul class="navbar-nav">
             <li class="logo">
                 <a href="#" class="nav-link">
                     <span class="link-text logo-text">ZeroRisks</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                        <path d="M416 174.74V48h-80v58.45L256 32 0 272h64v208h144V320h96v160h144V272h64l-96-97.26z" />
+                    </svg>
+                    <span class="link-text">Inicio</span>
                 </a>
             </li>
 
@@ -32,16 +41,6 @@
                             d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm69.3 96.17a72.5 72.5 0 11-72.6 72.5 72.55 72.55 0 0172.6-72.5zm-155.1 26.36a59.32 59.32 0 11-59.4 59.32 59.35 59.35 0 0159.4-59.32zm-75.85 155c24.5-13.29 55.87-19.94 75.85-19.94 15 0 34.32 3 53.33 10.2a133.05 133.05 0 00-34 27.11c-13.19 15-20.76 32.92-20.76 50.83v15a177.06 177.06 0 01-74.42-83.15zM256 432a175.12 175.12 0 01-59.4-10.33v-27.05c0-52.59 85.75-79.09 128.7-79.09 23 0 58.38 7.63 86.21 22.81A176.14 176.14 0 01256 432z" />
                     </svg>
                     <span class="link-text">Amigos</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
-                        <path
-                            d="M475.22 206.52c-10.34-48.65-37.76-92.93-77.22-124.68A227.4 227.4 0 00255.82 32C194.9 32 138 55.47 95.46 98.09 54.35 139.33 31.82 193.78 32 251.37a215.66 215.66 0 0035.65 118.76l4.35 6.05L48 480l114.8-28.56s2.3.77 4 1.42 16.33 6.26 31.85 10.6c12.9 3.6 39.74 9 60.77 9 59.65 0 115.35-23.1 156.83-65.06C457.36 365.77 480 310.42 480 251.49a213.5 213.5 0 00-4.78-44.97zM160 288a32 32 0 1132-32 32 32 0 01-32 32zm96 0a32 32 0 1132-32 32 32 0 01-32 32zm96 0a32 32 0 1132-32 32 32 0 01-32 32z" />
-                    </svg>
-                    <span class="link-text">chats</span>
                 </a>
             </li>
 
@@ -107,8 +106,18 @@
             </li>
         </ul>
     </nav>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chat</h2>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Aquí se mostrarán los mensajes -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" class="input-field" placeholder="Escribe un mensaje...">
+            <button onclick="sendMessage()" class="send-button">Enviar</button>
+        </div>
+    </div>
 
-    <main>
-        <h1>¡¡¡Hola usuario!!!.....</h1>
-    </main>
 </body>
+</html>
