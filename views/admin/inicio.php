@@ -1,3 +1,34 @@
+<?php
+// Lógica PHP para obtener datos de la base de datos, procesar información, etc.
+include("../../includes/conexion.php");
+
+$sql = "SELECT * FROM publicaciones ORDER BY fecha_de_publicacion DESC";
+$resultado = $conexion->query($sql);
+
+$publicaciones = array();
+
+if ($resultado->num_rows > 0) {
+    while ($row = $resultado->fetch_assoc()) {
+        $publicaciones[] = $row;
+    }
+}
+
+// Obtener detalles del usuario para cada publicación
+foreach ($publicaciones as &$publicacion) {
+    $usuario_id = $publicacion['usuario_id'];
+    $sql_user = "SELECT nombre FROM usuarios WHERE id = $usuario_id";
+    $result_user = $conexion->query($sql_user);
+
+    if ($result_user->num_rows > 0) {
+        $row = $result_user->fetch_assoc();
+        $publicacion['nombre_usuario'] = $row['nombre']; // Cambia 'nombre' por el nombre de tu columna
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="/assets/js/admin/inicio.js"></script>
@@ -130,30 +161,23 @@
         <!-- Sección de Publicaciones de Usuarios -->
         <section class="publicaciones">
             <!-- Publicaciones de usuarios aquí -->
+            <?php foreach ($publicaciones as $publicacion): ?>
             <article class="publicacion">
                 <div class="usuario-info">
-                    <img src="ruta-a-la-imagen-del-usuario.jpg" alt="Nombre de usuario">
-                    <h2>Nombre de usuario</h2>
+                    <!-- Mostrar el nombre de usuario -->
+                    <h2><?php echo $publicacion['nombre_usuario']; ?></h2>
                 </div>
-                <p>Contenido de la publicación...</p>
+                <p><?php echo $publicacion['contenido']; ?></p>
                 <div class="interacciones">
                     <button>Me gusta</button>
                     <button>Comentar</button>
                     <button>Compartir</button>
                 </div>
             </article>
+            <?php endforeach; ?>
             <!-- Otras publicaciones similares -->
         </section>
 
-        <!-- Sección de Actividades Recientes -->
-        <aside class="actividades">
-            <h2>Actividades Recientes</h2>
-            <ul>
-                <li>Actividad 1</li>
-                <li>Actividad 2</li>
-                <li>Actividad 3</li>
-            </ul>
-        </aside>
     </main>
 
 </body>

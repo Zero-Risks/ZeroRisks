@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="/assets/js/admin/inicio.js"></script>
@@ -122,14 +122,11 @@
 
     <main>
 
-    <form action="/includes/procesar_publicacion.php" method="post" enctype="multipart/form-data">
-    <label for="contenido">Contenido:</label><br>
-    <textarea id="contenido" name="contenido" rows="4" cols="50"></textarea><br>
-    <label for="imagen">Seleccionar imagen o video:</label><br>
-    <input type="file" id="imagen" name="imagen"><br><br>
-    <input type="submit" value="Publicar">
-
-</form>
+        <form action="/includes/procesar_publicacion.php" method="post">
+            <label for="contenido">Contenido:</label><br>
+            <textarea id="contenido" name="contenido" rows="4" cols="50"></textarea><br><br>
+            <input type="submit" value="Publicar">
+        </form>        
 
     </main>
 

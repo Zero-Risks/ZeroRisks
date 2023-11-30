@@ -11,18 +11,11 @@ if (isset($_SESSION['usuario_id'])) {
 include("conexion.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario_id = isset($_POST["usuario_id"]) ? $_POST["usuario_id"] : null;
-    $publicacion_original_id = isset($_POST["publicacion_original_id"]) ? $_POST["publicacion_original_id"] : null;
-    $comentario = isset($_POST["comentario"]) ? $_POST["comentario"] : null;
-    $fecha_de_compartir = date("Y-m-d H:i:s");
+    $contenido = isset($_POST["contenido"]) ? $_POST["contenido"] : null;
+    $fecha_de_publicacion = date("Y-m-d H:i:s");
 
-    $ruta_imagen = '';
-    if (isset($_FILES['imagen']) && !empty($_FILES['imagen']['name'])) {
-        $imagen_nombre = $_FILES['imagen']['name'];
-        $imagen_temp = $_FILES['imagen']['tmp_name'];
-        $ruta_imagen = 'ruta/donde/guardar/' . $imagen_nombre;
-        move_uploaded_file($imagen_temp, $ruta_imagen);
-    }
+    // Obtén el usuario_id de la sesión
+    $usuario_id = $_SESSION['usuario_id'];
 
     $sql_check_user = "SELECT id FROM usuarios WHERE id = ?";
     $stmt_check_user = $conexion->prepare($sql_check_user);
@@ -32,23 +25,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result_check_user->num_rows > 0) {
         try {
-            $sql = "INSERT INTO publicaciones_compartidas (usuario_id, publicacion_original_id, comentario, fecha_de_compartir, imagen, contenido) VALUES (?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO publicaciones (usuario_id, contenido, fecha_de_publicacion) VALUES (?, ?, ?)";
             
             $stmt = $conexion->prepare($sql);
-
-            if (empty($ruta_imagen)) {
-                $contenido = ''; // Asegúrate de obtener este valor si no hay imagen
-                $stmt->bind_param('iissss', $usuario_id, $publicacion_original_id, $comentario, $fecha_de_compartir, $ruta_imagen, $contenido);
-            } else {
-                $stmt->bind_param('iissss', $usuario_id, $publicacion_original_id, $comentario, $fecha_de_compartir, $ruta_imagen, $contenido);
-            }
+            $stmt->bind_param('iss', $usuario_id, $contenido, $fecha_de_publicacion);
             
             $stmt->execute();
 
             if ($stmt->affected_rows > 0) {
-                echo "La publicación compartida se ha creado correctamente.";
+                header("Location: ../views/admin/inicio.php");
             } else {
-                echo "Hubo un error al crear la publicación compartida.";
+                echo "Hubo un error al crear la publicación.";
             }
         } catch(mysqli_sql_exception $e) {
             echo "Error: " . $e->getMessage();
