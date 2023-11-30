@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Contraseña válida, iniciar sesión
             $_SESSION["usuario_id"] = $fila["id"];
             $_SESSION["usuario_nombre"] = $fila["nombre"];
-            header("Location: ../views/admin/inicio.html"); // Redirigir a la página de inicio después del inicio de sesión
+            header("Location: ../views/admin/inicio.php"); // Redirigir a la página de inicio después del inicio de sesión
         } else {
             // Contraseña incorrecta
             echo "Contraseña incorrecta. Inténtalo de nuevo.";

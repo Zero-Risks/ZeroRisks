@@ -1,5 +1,5 @@
 <?php
-include("conexion.php");
+include("../includes/conexion.php");
 
     // Recuperar datos del formulario
     $nombre = $_POST["nombre"];
