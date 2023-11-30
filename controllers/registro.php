@@ -15,7 +15,7 @@ include("../includes/conexion.php");
 
     // Ejecutar la consulta
     if ($conexion->query($sql) === TRUE) {
-        echo "Usuario registrado con éxito";
+        header("Location: ../index.html");
     } else {
         echo "Error al registrar el usuario: " . $conexion->error;
     }
