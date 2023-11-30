@@ -222,10 +222,113 @@ main {
   margin-right: 10px;
 }
 
-.interacciones button {
+.interacciones a {
   margin-right: 10px;
   padding: 5px 10px;
+  text-decoration: none;
+  color: #333; /* Color del texto */
 }
+
+.interacciones a:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+  color: blue; /* Color del texto al pasar el ratón */
+}
+
+/* Estilos para la sección de crear publicación */
+.crear-publicacion {
+  /* Estilos para la sección de crear publicación */
+}
+
+.cuadro-crear-publicacion {
+  /* Estilos para el cuadro de crear publicación */
+}
+
+/* Estilos para la sección de publicaciones de usuarios */
+.publicaciones {
+  /* Estilos para la sección de publicaciones */
+}
+
+.publicacion {
+  /* Estilos para cada publicación */
+}
+
+.usuario-info {
+  /* Estilos para la información del usuario */
+}
+
+.interacciones {
+  /* Estilos para las interacciones */
+}
+
+.interacciones a {
+  /* Estilos para los enlaces de interacciones */
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 50%; /* Hace que los elementos sean círculos */
+}
+
+/* Estilos para las opciones de reacción */
+.opciones-reaccion {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100px;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.opciones-reaccion a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 2px;
+}
+
+/* Estilos específicos para cada opción */
+.opcion1 {
+  background-color: #ff0000; /* Rojo */
+}
+
+.opcion2 {
+  background-color: #00ff00; /* Verde */
+}
+
+.opcion3 {
+  background-color: #0000ff; /* Azul */
+}
+
+/* Estilos para las interacciones */
+.interacciones {
+  position: relative;
+  display: inline-block;
+}
+
+.interacciones:hover .opciones-reaccion {
+  display: block;
+}
+
+
+/* Estilos para las reacciones */
+.reacciones {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.reaccion {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
 
 /* Ajustes para pantallas grandes */
 @media only screen and (min-width: 600px) {
