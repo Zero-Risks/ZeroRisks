@@ -1,74 +1,88 @@
 <?php
-include '../../../includes/conexion.php'; // Asegúrate de quphpe este archivo contiene la conexión a tu base de datos
+include '../includes/conexion.php'; // Asegúrate de que este archivo contiene la conexión a tu base de datos
 
 session_start();
 $usuario_id = $_SESSION['usuario_id']; // Asegúrate de que el ID del usuario esté almacenado en la sesión
 
-// Consulta para obtener los datos del usuario
-$sql = "SELECT nombre, apellido, correo_electronico, fecha_de_nacimiento, genero, foto_perfil FROM usuarios WHERE id = ?";
-if ($stmt = $conexion->prepare($sql)) {
-    $stmt->bind_param("i", $usuario_id);
-    $stmt->execute();
-    $stmt->bind_result($nombre, $apellido, $correo_electronico, $fecha_de_nacimiento, $genero, $foto_perfil);
-    $stmt->fetch();
-    $stmt->close();
+// Verificar si el formulario ha sido enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Obtener los valores del formulario
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $correo_electronico = $_POST['correo_electronico'];
+    $fecha_de_nacimiento = $_POST['fecha_de_nacimiento'];
+    $genero = $_POST['genero'];
+
+    // Manejar la carga de la foto de perfil
+    $foto_perfil = '';
+    if (isset($_FILES['foto_perfil']) && $_FILES['foto_perfil']['error'] == 0) {
+        // Crear una subcarpeta basada en el ID del usuario
+        $carpeta_destino = "uploads/" . $usuario_id . "/";
+        if (!file_exists($carpeta_destino)) {
+            mkdir($carpeta_destino, 0777, true);
+        }
+
+        $nombre_archivo = basename($_FILES["foto_perfil"]["name"]);
+        $ruta_archivo = $carpeta_destino . $nombre_archivo;
+        $tipo_archivo = strtolower(pathinfo($ruta_archivo, PATHINFO_EXTENSION));
+
+        // Verificar si el archivo es una imagen
+        $check = getimagesize($_FILES["foto_perfil"]["tmp_name"]);
+        if($check !== false) {
+            // Verificar tamaño y tipo del archivo
+            if ($_FILES["foto_perfil"]["size"] > 500000 || !in_array($tipo_archivo, ['jpg', 'png', 'jpeg', 'gif'])) {
+                echo "Archivo no permitido.";
+                exit;
+            }
+
+            // Intentar cargar el archivo
+            if (move_uploaded_file($_FILES["foto_perfil"]["tmp_name"], $ruta_archivo)) {
+                $foto_perfil = $ruta_archivo; // Guardar la ruta completa
+            } else {
+                echo "Error al cargar tu archivo.";
+                exit;
+            }
+        } else {
+            echo "El archivo no es una imagen.";
+            exit;
+        }
+    }
+
+    // Preparar la consulta SQL para actualizar los datos del usuario
+    $sql = "UPDATE usuarios SET 
+            nombre = ?, 
+            apellido = ?, 
+            correo_electronico = ?, 
+            fecha_de_nacimiento = ?, 
+            genero = ?, 
+            foto_perfil = ? 
+            WHERE id = ?";
+
+    if ($stmt = $conexion->prepare($sql)) {
+        $stmt->bind_param("ssssssi", $nombre, $apellido, $correo_electronico, $fecha_de_nacimiento, $genero, $foto_perfil, $usuario_id);
+
+        if ($stmt->execute()) {
+            // Redireccionar a la página de perfil o mostrar mensaje de éxito
+            header("Location: perfil.php");
+            exit;
+        } else {
+            echo "Error al actualizar el perfil: " . $stmt->error;
+        }
+
+        $stmt->close();
+    } else {
+        echo "Error al preparar la consulta: " . $conexion->error;
+    }
 }
+
 $conexion->close();
+
+// Función para obtener la URL de la imagen
+function obtenerUrlImagen($rutaRelativa) {
+    return 'http://' . $_SERVER['HTTP_HOST'] . '/' . $rutaRelativa;
+}
+
+// En otro lugar del código, cuando necesites la URL de la imagen
+// $urlImagen = obtenerUrlImagen($foto_perfil);
+
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Perfil</title>
-    <link rel="stylesheet" href="/assets/css/admin/Inicioperfil.css">
-</head>
-
-<body>
-    <div class="perfil-container">
-        <form action="/controllers/editarperfil.php" method="post" enctype="multipart/form-data">
-            <div class="perfil-container">
-                <form action="/controllers/editarperfil.php" method="post" enctype="multipart/form-data">
-                    <!-- Resto del formulario -->
-                    <div class="foto-perfil">
-                        <?php
-                        $rutaBaseImagenes = "../../controllers/uploads";
-                        $rutaCompletaImagen = $rutaBaseImagenes . $foto_perfil;
-                        if (file_exists($rutaCompletaImagen)) {
-                            echo '<img src="' . $rutaCompletaImagen . '" alt="Foto de perfil">';
-                        } else {
-                            echo '<img src="/ruta/a/imagen/por/defecto.jpg" alt="Foto de perfil">';
-                        }
-                        ?>
-                        <input type="file" name="foto_perfil">
-                    </div>
-                    <div class="informacion-usuario">
-                        <input type="hidden" name="usuario_id" value="<?php echo $usuario_id; ?>">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" value="<?php echo $nombre; ?>">
-
-                        <label for="apellido">Apellido:</label>
-                        <input type="text" id="apellido" name="apellido" value="<?php echo $apellido; ?>">
-
-                        <label for="correo_electronico">Correo Electrónico:</label>
-                        <input type="email" id="correo_electronico" name="correo_electronico" value="<?php echo $correo_electronico; ?>">
-
-                        <label for="fecha_de_nacimiento">Fecha de Nacimiento:</label>
-                        <input type="date" id="fecha_de_nacimiento" name="fecha_de_nacimiento" value="<?php echo $fecha_de_nacimiento; ?>">
-
-                        <label for="genero">Género:</label>
-                        <select id="genero" name="genero">
-                            <option value="Masculino" <?php echo $genero == 'Masculino' ? 'selected' : ''; ?>>Masculino</option>
-                            <option value="Femenino" <?php echo $genero == 'Femenino' ? 'selected' : ''; ?>>Femenino</option>
-                            <!-- Agregar más opciones de género si es necesario -->
-                        </select>
-
-                        <button type="submit">Actualizar Perfil</button>
-                    </div>
-                </form>
-            </div>
-</body>
-
-</html>
