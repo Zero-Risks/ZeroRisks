@@ -182,6 +182,20 @@ main {
   padding: 20px 300px 10px 300px;
 }
 
+.cuadro-crear-publicacion {
+  display: block;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.cuadro-crear-publicacion:hover {
+  background-color: #f0f0f0;
+}
+
+
 
 .publicaciones {
   flex: 2;
