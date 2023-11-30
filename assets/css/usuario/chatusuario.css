@@ -245,7 +245,7 @@
 }
 
 .chat-header {
-    background-color: #4CAF50;
+    background-color: #1e1e24;
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -271,7 +271,7 @@
 }
 
 .send-button {
-    background-color: #4CAF50;
+    background-color: #1e1e24;
     color: #fff;
     padding: 8px 16px;
     border: none;
