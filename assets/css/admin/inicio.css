@@ -227,9 +227,26 @@ main {
   font-weight: bold;
 }
 
+/* Estilos para las opciones de reacción */
 .opciones-reaccion {
-  /* Tus estilos actuales para opciones-reaccion */
+  display: none;
+  /* Otros estilos... */
 }
+
+/* Estilos para mostrar las opciones de reacción al pasar el ratón */
+.reaccion:hover + .opciones-reaccion {
+  display: block;
+}
+
+/* Estilos para las opciones individuales de reacción */
+.opcion-reaccion {
+  /* Estilos para el aspecto de los botones de reacción, por ejemplo: */
+  cursor: pointer;
+  margin: 0 5px;
+  /* Puedes agregar más estilos aquí */
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

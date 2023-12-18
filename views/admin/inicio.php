@@ -142,11 +142,12 @@ foreach ($publicaciones as &$publicacion) {
                         <div class="interacciones">
                             <a href="#" class="reaccion">Reaccionar</a>
                             <div class="opciones-reaccion">
-                                <a href="#" class="opcion-reaccion opcion1"></a>
-                                <a href="#" class="opcion-reaccion opcion2"></a>
-                                <a href="#" class="opcion-reaccion opcion3"></a>
+                                <a href="#" class="opcion-reaccion reaccion-like">👍</a>
+                                <a href="#" class="opcion-reaccion reaccion-love">❤️</a>
+                                <a href="#" class="opcion-reaccion reaccion-laugh">😂</a>
                             </div>
                         </div>
+
 
                         <a href="publicaciones/comentarios.php?id=<?php echo $publicacion['id']; ?>">Comentarios</a>
                         <a href="otro_apartado.php?id=<?php echo $publicacion['id']; ?>">Compartir</a>
