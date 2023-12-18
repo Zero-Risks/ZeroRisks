@@ -182,168 +182,68 @@ main {
   padding: 20px 300px 10px 300px;
 }
 
-/*publicaciones */
-
-.cuadro-crear-publicacion {
-  display: block;
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  color: black;
+.crear-publicacion {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
 }
 
-.cuadro-crear-publicacion:hover {
-  background-color: #f0f0f0;
-}
-
-.publicaciones {
-  flex: 2;
-  margin-right: 20px;
-}
-
-.actividades {
-  flex: 1;
-  background-color: #eee;
-  padding: 10px;
-}
-
+/* Estilos para Publicaciones */
 .publicacion {
   background-color: #fff;
-  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  padding: 10px;
-}
-
-.usuario-info img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.interacciones a {
-  margin-right: 10px;
-  padding: 5px 10px;
-  text-decoration: none;
-  color: #333; /* Color del texto */
-}
-
-.interacciones a:hover {
-  text-decoration: underline; /* Subrayado al pasar el ratón */
-  color: blue; /* Color del texto al pasar el ratón */
-}
-
-/* Estilos para la sección de crear publicación */
-.crear-publicacion {
-  /* Estilos para la sección de crear publicación */
-}
-
-.cuadro-crear-publicacion {
-  /* Estilos para el cuadro de crear publicación */
-}
-
-/* Estilos para la sección de publicaciones de usuarios */
-.publicaciones {
-  /* Estilos para la sección de publicaciones */
-}
-
-.publicacion {
-  /* Estilos para cada publicación */
+  padding: 15px;
 }
 
 .usuario-info {
-  /* Estilos para la información del usuario */
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
+.usuario-info img {
+  border-radius: 50%;
+}
+
+.usuario-info h5 {
+  margin-left: 10px;
+}
+
+/* Interacciones */
 .interacciones {
-  /* Estilos para las interacciones */
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .interacciones a {
-  /* Estilos para los enlaces de interacciones */
-  display: inline-block;
-  margin-right: 10px;
-  padding: 5px;
-  border-radius: 50%; /* Hace que los elementos sean círculos */
+  color: #333;
+  font-weight: bold;
 }
 
-/* Estilos para las opciones de reacción */
 .opciones-reaccion {
-  display: none;
-  position: absolute;
-  top: 30px;
-  left: 0;
-  width: 100px;
-  background-color: #fff;
-  padding: 5px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  /* Tus estilos actuales para opciones-reaccion */
 }
 
-.opciones-reaccion a {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin: 2px;
-}
-
-/* Estilos específicos para cada opción */
-.opcion1 {
-  background-color: #ff0000; /* Rojo */
-}
-
-.opcion2 {
-  background-color: #00ff00; /* Verde */
-}
-
-.opcion3 {
-  background-color: #0000ff; /* Azul */
-}
-
-/* Estilos para las interacciones */
-.interacciones {
-  position: relative;
-  display: inline-block;
-}
-
-.interacciones:hover .opciones-reaccion {
-  display: block;
-}
-
-
-/* Estilos para las reacciones */
-.reacciones {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-}
-
-.reaccion {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-
-
-
-/* Ajustes para pantallas grandes */
-@media only screen and (min-width: 600px) {
-  .navbar {
-    top: 0;
-    width: 16rem;
-    /* Ancho fijo para pantallas grandes */
-    height: 100vh;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
   }
-}
 
-.nav-link {
-  justify-content: flex-start; /* Alinea el contenido al principio del contenedor flex */
-}
+  .publicaciones, .actividades {
+    margin: 0;
+    padding: 0;
+  }
 
-.navbar .link-text {
-  display: inline; /* Hacer que el texto esté siempre visible */
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
 }
