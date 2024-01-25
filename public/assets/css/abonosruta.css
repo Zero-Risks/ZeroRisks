@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+ 
+
+main{
+    padding: 20px;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+
+.back-link1 {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    border: 1px solid #74d8d8;
+    background-color: #a9f0f0;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.back-link1:hover {
+    background-color: #2cc0c0;
+}
+
+
+/* Estilos para el nombre de usuario y rol */
+.nombre-usuario {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    color: blue;
+    max-width: 200px;
+    word-wrap: break-word;
+  }
+  
+  .nombre-usuario span {
+    color: grey;
+  }
+
+  
+/* Estilos para la tabla */
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto; /* Agrega desplazamiento horizontal en pantallas pequeñas */
+}
+ 
+.table-scroll-container {
+    overflow-x: auto; /* Habilita el desplazamiento horizontal */
+    margin-top: 20px;
+}
+
+  
+
+/* Estilos generales */
+
+h2 { 
+    margin: 10px;
+    font-size: 28px;
+}
+
+#lista-pagos {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+#lista-pagos th,
+#lista-pagos td {
+    padding: 10px; 
+    text-align: left;
+}
+
+#lista-pagos th {
+    background-color: #747474;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ 
+.drag-handle {
+    text-align: center;
+    cursor: move;
+}
+
+.aviso{
+    display: none;
+    text-align: center;
+    padding: 10px;
+    background-color: #dff0d8;
+    border: 10px;
+    border: 1px solid #c8e3b9;
+} 
+
+.fila-resaltada {
+    background-color: #4ec571; /* Cambia esto según el color que prefieras */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+
+
+/* Estilos responsivos (ajusta los valores según tus necesidades) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    #lista-pagos th,
+    #lista-pagos td {
+        padding: 8px;
+    }
+
+    .drag-handle {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cuadros-container {
+        flex-direction: column;
+    }
+
+    .cuadro {
+        width: 100%;
+        max-width: 100%;
+    }
+   
+        .body_move{
+            margin-left: 0px;
+        }
+    
+        .menu__side_move{
+            width: 80px;
+            left: -80px;
+        }
+    
+    
+}

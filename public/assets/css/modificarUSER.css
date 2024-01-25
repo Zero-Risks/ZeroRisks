@@ -1,0 +1,69 @@
+  body {
+      background-color: #f8f9fa;
+  }
+
+  .navbar {
+      background-color: #87afda;
+  }
+
+  .navbar-brand {
+      color: white;
+      font-weight: bold;
+  }
+
+  .navbar-toggler-icon {
+      background-color: white;
+  }
+
+  .navbar-nav .nav-link {
+      color: white;
+  }
+
+  .navbar-nav .nav-link:hover {
+      color: #0056b3;
+  }
+
+  .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-header {
+      background-color: #f0f8ff;
+      /* Azul claro */
+      border-radius: 15px 15px 0 0;
+  }
+
+  .form-control {
+      border: none;
+      border-radius: 10px;
+      padding: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-primary {
+      background-color: #007bff;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 20px;
+      transition: background-color 0.2s;
+      font-weight: bold;
+  }
+
+  .btn-primary:hover {
+      background-color: #0056b3;
+  }
+
+  .nombre-usuario {
+      font-size: 18px;
+  }
+
+  .card-title {
+      font-size: 24px;
+      font-weight: bold;
+  }
+
+  .card-subtitle {
+      font-size: 18px;
+  }

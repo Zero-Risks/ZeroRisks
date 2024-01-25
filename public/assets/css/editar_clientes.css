@@ -1,0 +1,81 @@
+/* Estilos Generales del Formulario */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de cada Campo */
+.input-container {
+    margin-bottom: 15px;
+}
+
+/* Estilo de las Etiquetas */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Estilo de los Campos de Entrada y Select */
+input[type="text"],
+input[type="file"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que padding y border no afecten el ancho total */
+}
+
+/* Estilo del Botón de Submit */
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Mensajes de Error o Confirmación */
+.mensaje {
+    color: red;
+    font-size: 14px;
+}
+
+/* Estilo del Contenedor del Botón */
+.btn-container {
+    text-align: right;
+}
+
+/* Estilos para pantallas medianas (tabletas) */
+@media screen and (max-width: 768px) {
+    form {
+        max-width: 90%;
+        padding: 10px;
+    }
+    label, input[type="submit"] {
+        font-size: 14px;
+    }
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media screen and (max-width: 480px) {
+    form {
+        max-width: 100%;
+        padding: 5px;
+    }
+    label, input[type="submit"] {
+        font-size: 12px;
+    }
+    /* Puedes agregar estilos adicionales para campos y etiquetas en pantallas pequeñas si es necesario */
+}

@@ -1,0 +1,84 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilos del formulario */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input[type="text"] {
+    width: calc(100% - 12px);
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    background-color: #747474;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #585858;
+}
+
+/* Estilos para mensajes de error o éxito */
+.error-message,
+.success-message {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+}
+
+.error-message {
+    background-color: #f44336;
+    color: white;
+}
+
+.success-message {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Media query para hacerlo responsive */
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+    
+    input[type="text"] {
+        width: 100%;
+    }
+}

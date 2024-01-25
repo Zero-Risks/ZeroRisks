@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Asegúrese de que la solicitud no sea por un archivo real o directorio
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Ocultar la carpeta 'controllers' de la URL
+RewriteRule ^([a-zA-Z0-9_-]+)$ controllers/$1.php [L]
+
+# Ocultar la carpeta 'menu' de la URL
+RewriteRule ^menu/([a-zA-Z0-9_-]+)$ menu/$1.php [L]
+
+# Agregue reglas adicionales según sea necesario para otras carpetas
+
+# Redireccionar a error404.html si no se encuentra el archivo
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . /error404.html [L]

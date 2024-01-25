@@ -1,0 +1,586 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    padding: 85px 0px 20px 0px;
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* ENCABEZADO */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa60;
+
+    padding: 10px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    z-index: 1000;
+
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    header {
+        background: transparent;
+        border: none;
+    }
+}
+
+/* BARRA DEL MENU */
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 30px;
+    z-index: 100;
+    display: none;
+
+    position: fixed;
+    top: 10px;
+    right: 10px;
+
+
+}
+
+#menu {
+    background-color: #ffffff;
+    z-index: 99;
+    transition: left 0.5s ease;
+}
+
+.menu-header {
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 1px solid #ffffff;
+}
+
+.back-link {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border-bottom: 1px solid #ffffff;
+}
+
+.back-link:hover {
+    background-color: #ffffff;
+}
+
+/* Estilos específicos para pantallas pequeñas (dispositivos móviles) */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        /* Muestra el icono de hamburguesa en dispositivos móviles */
+    }
+
+    #menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+
+        width: 100%;
+        overflow-y: auto;
+    }
+}
+
+/* Estilos para pantallas grandes (PC) */
+@media screen and (min-width: 769px) {
+    #menu {
+        position: relative;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+        left: 0;
+        /* Menú visible y en línea */
+        overflow-y: visible;
+    }
+
+    .back-link {
+        display: inline-block;
+        padding: 10px 15px;
+        border-bottom: none;
+    }
+}
+
+/* NO TIENE PRESTAMO */
+.no-prestamo-mensaje {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+    background-color: pink;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* MOVER TABLA EN CELULAR */
+.table-scroll-container {
+    overflow-x: auto;
+    /* Habilita el desplazamiento horizontal */
+    margin-top: 20px;
+}
+
+/* INFORMACION DEL CLIENTE */
+.info-cliente {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 93%;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgb(178, 200, 230);
+    border-radius: 8px;
+}
+
+.columna {
+    flex: 1;
+    padding: 0 10px;
+
+}
+
+
+/* PARTE DE BUSCAR CLIENTE */
+#clienteForm {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    margin-top: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+#clienteForm h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Estilos para la búsqueda */
+.busqueda-container {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.input-busqueda {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    border-bottom: 1px solid #000000;
+    margin-right: 10px;
+}
+
+.resultados-busqueda {
+    width: 100%;
+    max-height: 200px;
+    /* Ajusta según la necesidad */
+    overflow-y: auto;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    /* Incluye el padding en el cálculo del ancho total */
+}
+
+.resultados-busqueda div {
+    border-bottom: 1px solid rgba(78, 142, 226, 0.836);
+    /* Borde gris claro solo en la parte inferior */
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 5px;
+    /* Espacio entre resultados */
+    padding: 5px;
+    /* Espacio dentro de cada resultado */
+    border-radius: 4px;
+    /* Esquinas redondeadas para cada resultado */
+    cursor: pointer;
+    /* Cursor en forma de mano al pasar por encima */
+    transition: background-color 0.3s;
+    /* Suaviza la transición del color de fondo */
+}
+
+.resultados-busqueda div:hover {
+    background-color: #ccf1f1;
+    /* Color de fondo al pasar el cursor */
+}
+
+
+/* Estilos para los botones de navegación */
+
+
+.boton4 {
+    padding: 10px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 99, 132, 1);
+    background-color: rgba(255, 99, 132, 0.6);
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.boton4:hover {
+    background-color: rgba(241, 140, 162, 0.6);
+}
+
+
+
+
+
+.boton1,
+.boton2,
+.boton3 {
+    padding: 8px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: #000000;
+    cursor: pointer;
+    margin-right: 10px;
+    /* Separación entre botones */
+    margin-left: 10px;
+    /* Espacio izquierdo */
+}
+
+.boton1 {
+    border: 1px solid rgba(54, 162, 235, 1);
+    background-color: rgba(54, 162, 235, 0.6);
+}
+
+.boton1:hover {
+    background-color: rgba(30, 114, 170, 0.6);
+}
+
+.boton2 {
+    border: 1px solid rgba(255, 206, 86, 1);
+    background-color: rgba(255, 206, 86, 0.6);
+}
+
+.boton2:hover {
+    background-color: rgba(179, 137, 34, 0.6);
+}
+
+.boton3 {
+    border: 1px solid rgba(123, 123, 192, 4);
+    background-color: rgba(123, 123, 192, 0.6);
+}
+
+.boton3:hover {
+    background-color: rgba(81, 81, 133, 0.6);
+}
+
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.formulario {
+    width: 70%;
+    /* Ancho ajustable */
+    max-width: 400px;
+    /* Ancho máximo */
+    text-align: center;
+}
+
+input[type="text"] {
+    width: calc(33.33% - 10px);
+    /* Un tercio del ancho con un pequeño margen entre ellos */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    /* Mostrar en línea para colocar horizontalmente */
+    box-sizing: border-box;
+    /* Incluir el padding y border en el ancho total */
+    vertical-align: top;
+    margin-left: 7px;
+}
+
+.no-pagos-message {
+    color: #000000;
+    /* Texto en negro */
+    background-color: #f39b9b;
+    /* Fondo rojo claro */
+    border: 2px solid #d12e2e;
+    /* Borde rojo oscuro */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px auto;
+    /* Centrado horizontalmente */
+    text-align: center;
+    /* Texto centrado */
+    max-width: 80%;
+    /* Ancho máximo ajustable */
+    width: 100%;
+    /* Ocupa el ancho disponible */
+    box-sizing: border-box;
+    /* Incluye padding y border en el ancho total */
+}
+
+/* Estilos para pantallas pequeñas (dispositivos móviles) */
+@media screen and (max-width: 768px) {
+    .no-pagos-message {
+        padding: 10px 5px;
+        /* Menos padding en dispositivos móviles */
+        max-width: 100%;
+        /* Ancho más grande en pantallas pequeñas */
+    }
+}
+
+
+
+
+/* TABLA DE PAGOS */
+
+table {
+    width: 100%;
+    /* Ajusta el ancho de la tabla */
+    border-collapse: collapse;
+    /* Elimina el espacio entre las celdas */
+    margin: 20px;
+    /* Margen arriba y abajo de la tabla */
+}
+
+th,
+td {
+    border: 1px solid rgb(130, 167, 214);
+    /* Borde para celdas y encabezados */
+    padding: 10px 20px;
+    /* Padding de 10px arriba/abajo y 20px izquierda/derecha */
+    text-align: left;
+    /* Alineación del texto */
+}
+
+th {
+    background-color: rgb(137, 169, 211);
+    /* Color de fondo para los encabezados */
+    color: #000000;
+    /* Color del texto para los encabezados */
+}
+
+.fecha-hoy {
+    color: red;
+    font-weight: bold;
+    background-color: yellow;
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px gray;
+}
+
+.no-pagos-message {
+    color: #ff6666;
+    /* Rojo claro para el texto */
+    text-align: center;
+    /* Alineación del texto al centro */
+    padding: 10px;
+    margin: 20px 0;
+    /* Margen arriba y abajo */
+}
+
+.edit-button {
+    text-align: center;
+    /* Centra los botones y enlaces */
+    margin: 20px 0;
+    /* Margen arriba y abajo */
+}
+
+.edit-button button,
+.edit-button a {
+    margin: 5px;
+    /* Espacio alrededor de los botones y enlaces */
+    padding: 10px 15px;
+    /* Padding para botones y enlaces */
+    text-decoration: none;
+    /* Elimina el subrayado de los enlaces */
+    color: #333;
+    /* Color del texto para los enlaces */
+}
+
+.edit-button a:hover {
+    color: #017cff;
+    /* Color del texto al pasar el mouse por encima */
+}
+
+
+
+/* Estilos para el botón de editar */
+.edit-button {
+    margin-top: 20px;
+    /* Espacio superior */
+    text-align: right;
+    /* Alineación del contenido a la derecha */
+}
+
+.edit-button a {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #5a3ff0;
+    color: #fff;
+    margin: 10px;
+    text-decoration: none;
+    border: 1px solid rgb(53, 27, 199);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button a:hover {
+    background-color: #3b29a0;
+}
+
+.edit-button button {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #5a3ff0;
+    color: #fff;
+    margin: 10px;
+    text-decoration: none;
+    border: 1px solid rgb(53, 27, 199);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button button:hover {
+    background-color: #3b29a0;
+}
+
+/* Estilo del botón */
+.currency-button {
+    padding: 8px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #3b29a0;
+    /* Color de fondo del botón */
+    color: #fff;
+    /* Color del texto */
+    text-decoration: none;
+    /* Quita el subrayado del enlace */
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+/* Estilo al pasar el mouse sobre el botón */
+.currency-button:hover {
+    background-color: #3b29a0;
+    /* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    /* Estilos para dispositivos móviles */
+
+    body {
+        padding-top: 65px;
+    }
+
+    header {
+        height: 65px;
+    }
+
+    .busqueda-navegacion-container {
+        flex-direction: column;
+    }
+
+    #filtroBusqueda {
+        width: 100%;
+        /* Ajusta esto según tus necesidades */
+        /* Puedes agregar más estilos aquí si es necesario */
+    }
+
+
+
+    .nombre-usuario {
+        top: 5px;
+        right: 5px;
+        max-width: 150px;
+    }
+
+    .back-link {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .profile-container,
+    .profile-details {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .profile-image img {
+        max-height: 120px;
+    }
+
+    .boton1 {
+        display: inline-block;
+        width: 28%;
+        /* Ancho deseado */
+        margin: 5px;
+        /* Espacio entre los botones */
+        padding: 8px 16px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .boton2 {
+        display: inline-block;
+        width: 28%;
+        /* Ancho deseado */
+        margin: 5px;
+        /* Espacio entre los botones */
+        padding: 8px 16px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .boton3 {
+        display: inline-block;
+        width: 28%;
+        /* Ancho deseado */
+        margin: 5px;
+        /* Espacio entre los botones */
+        padding: 8px 16px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+
+    .boton4 {
+        display: inline-block;
+        width: 43%;
+        /* Ancho deseado */
+        margin: 5px;
+        /* Espacio entre los botones */
+        padding: 8px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    button,
+    .back-link {
+        margin: 5px;
+    }
+
+    /* Ajustes para la tabla */
+    table {
+        font-size: 12px;
+        overflow-x: auto;
+    }
+
+}

@@ -1,0 +1,115 @@
+/* Estilo para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px; /* Reducción del relleno para pantallas más pequeñas */
+}
+
+/* Estilo para los títulos */
+h1 {
+    background-color: #747474;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 20px; /* Reducción del tamaño de fuente para pantallas más pequeñas */
+    margin-bottom: 15px; /* Reducción del margen inferior para pantallas más pequeñas */
+}
+
+/* Estilos para los mensajes de error */
+p {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px; /* Reducción del tamaño de fuente para pantallas más pequeñas */
+}
+
+/* Estilos generales del formulario */
+form {
+    max-width: 600px; /* Ajuste al ancho de la pantalla */
+    margin: 0 auto;
+    padding: 20px 35px 20px 20px; 
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Estilos para etiquetas de texto */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Estilos para campos de entrada de texto */
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Reducción del margen inferior para pantallas más pequeñas */
+    font-size: 16px;
+}
+
+/* Estilos para el campo de fecha */
+input[type="date"] {
+    /* Mantén los estilos existentes */
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Estilos para el menú desplegable */
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Reducción del margen inferior para pantallas más pequeñas */
+    font-size: 16px;
+}
+
+/* Estilos para el botón */
+input[type="submit"] {
+    background-color: #747474;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para el botón al pasar el mouse */
+input[type="submit"]:hover {
+    background-color: #585858;
+}
+
+/* Estilos para el enlace de "Volver" */
+a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ddd;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* Estilos para el enlace de "Volver" al pasar el mouse */
+a:hover {
+    background-color: #ccc;
+}
+
+/* Estilo para el textarea */
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}

@@ -1,0 +1,80 @@
+/* Estilos para la página de grupos */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px; /* Reducción del relleno para pantallas más pequeñas */
+}
+
+h1 {
+    background-color: #70aee9;
+    color: #000000;
+    padding: 15px; /* Reducción del relleno para pantallas más pequeñas */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: #70aee9;
+    font-weight: bold;
+    color: #000000;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #70aee9;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Estilo para el botón "Añadir Grupo" */
+button a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3;
+    color: black;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Reducción adicional del relleno para pantallas muy pequeñas */
+    }
+
+    h1 {
+        padding: 10px; /* Reducción adicional del relleno para pantallas muy pequeñas */
+    }
+
+    li {
+        font-size: 14px; /* Reducción del tamaño de fuente para pantallas más pequeñas */
+    }
+
+    button {
+        padding: 8px 16px; /* Reducción del relleno para pantallas más pequeñas */
+    }
+}

@@ -1,0 +1,96 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 20px;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(253, 253, 253, 0.1);
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+h1,
+h2,
+h3 {
+    color: #333;
+}
+
+
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+/* Formulario de filtro */
+#filter-form {
+    margin-bottom: 30px;
+}
+
+#filter-form .row {
+    align-items: flex-end;
+}
+
+#filter-form .col {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#filter-form button {
+    width: 100%;
+}
+
+/* Tabla */
+.table {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.table th,
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Cuadro de búsqueda */
+.mb-3 {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+}
+
+.mb-3 h3 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Botones */
+.btn {
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #filter-form .row {
+        flex-direction: column;
+    }
+
+    #filter-form .col {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    #filter-form button {
+        width: 100%;
+    }
+}

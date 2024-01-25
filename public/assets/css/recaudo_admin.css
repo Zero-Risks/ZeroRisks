@@ -1,0 +1,61 @@
+body {
+    background-color: #f4f4f4;
+    padding-top: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #333;
+}
+
+#filter-form {
+    margin-bottom: 30px;
+}
+
+#filter-form .row {
+    align-items: end;
+}
+
+.table {
+    margin-top: 20px;
+}
+.mb-3 {
+    background-color: #f2f2f2; /* Fondo gris claro */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px; /* Margen inferior, ajusta según necesidad */
+}
+
+.mb-3 h3 {
+    color: #333; /* Color de texto oscuro */
+    margin-bottom: 5px; /* Espacio debajo del encabezado */
+}
+
+#totalPagado {
+    font-weight: bold; /* Hacer el total más prominente */
+    color: #60d842; /* Color azul, ajusta según tu esquema de colores */
+    font-size: 1.2em; /* Tamaño ligeramente más grande */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #filter-form .row {
+        flex-direction: column;
+    }
+
+    #filter-form .col {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    #filter-form button {
+        width: 100%;
+    }
+}

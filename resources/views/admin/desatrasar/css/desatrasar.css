@@ -1,0 +1,60 @@
+.container {
+    max-width: 700px;
+}
+
+.cuota {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.cuota-label {
+    margin-top: 5px;
+}
+
+.form-control,
+.btn {
+    margin: 5px 0;
+}
+
+.cuota .form-group {
+    flex: 0 0 48%;
+    /* Ajuste para reducir el espacio entre los elementos */
+    margin: 0 10px;
+    /* Espaciado adicional si es necesario */
+}
+
+/* Estilo para el contenedor */
+
+
+/* Estilo para el enlace que actúa como botón */
+.navbar-brand {
+    background-color: #4698bed0;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    padding: 10px 15px;
+    /* Espaciado interno */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    text-decoration: none;
+    /* Elimina el subrayado del enlace */
+    transition: background-color 0.3s;
+    /* Transición suave para el color de fondo */
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+    background-color: #0056b3;
+    color: white;
+    text-decoration: none;
+
+}
+
+
+.navbar-brand .fas {
+    margin-right: 5px;
+
+}

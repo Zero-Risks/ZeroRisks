@@ -1,0 +1,230 @@
+/* Estilos Generales */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.table-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.table-scroll-container {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+header {
+  background: #ada6a6;
+  color: #fff; 
+}
+
+/* Estilos para el nombre de usuario y rol */
+.nombre-usuario {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  color: blue;
+  max-width: 200px;
+  word-wrap: break-word;
+}
+
+.nombre-usuario span {
+  color: grey;
+}
+.btn-mas-tarde{
+  background-color: #5cb85c;
+
+}
+
+.boton-morado {
+  background-color: rgb(123, 123, 192, 4); /* Color morado */
+  /* Otros estilos */
+}
+
+header a {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(131, 127, 127);
+  color: #fff;
+  margin-right: 5px;
+}
+
+main {
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+/* Estilos del Formulario */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+form > * {
+  margin: 10px;
+}
+
+input[type="text"], select {
+  flex-grow: 2;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+input[type="submit"], .btn-registrar {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+}
+
+input[type="submit"]:hover, .btn-registrar:hover {
+  background-color: #555;
+}
+
+/* Botón para registrar cliente */
+.btn-registrar {
+  background-color: #5cb85c; /* Color verde para el botón de registrar */
+}
+
+.btn-registrar:hover {
+  background-color: #4cae4c;
+}
+
+/* Estilos de la Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  max-width: 100%;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #747474;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #dcdcdc;
+}
+
+/* Estilos para los enlaces en la última columna */
+td a {
+  background: #adadad;
+  text-decoration: none;
+  color: #000000;
+  transition: color 0.3s ease;
+  padding: 7px;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+}
+
+td a:hover {
+  background: #707070;
+  color: #000000;
+}
+
+/* Estilos de los Botones */
+button {
+  background-color: rgb(131, 127, 127);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #888;
+}
+
+/* Estilos del Gráfico de Barras */
+.grafico-contenedor {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#miGrafico {
+  width: 100%;
+  height: 100%;
+}
+
+/* Monto cuota */
+.monto-cuota-rojo {
+  color: red;
+}
+
+.Total-pagar {
+  color: rgb(123, 141, 21);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grafico-contenedor {
+    max-width: 100%;
+    height: 300px;
+  }
+
+  form {
+    padding: 10px;
+  }
+
+  input[type="text"], select, input[type="submit"], .btn-registrar {
+    flex-grow: 1;
+    margin: 10px 0;
+    padding: 10px;
+
+
+
+  }
+
+}

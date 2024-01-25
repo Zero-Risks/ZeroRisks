@@ -1,0 +1,242 @@
+// RUTA PARA LOS PERMISOS
+include("../../../../controllers/verificar_permisos.php");
+
+// Ruta a permisos
+include("../../../../../../../controllers/verificar_permisos.php");
+
+
+//PERMISOS EN SESION
+<?php
+
+
+
+//PERMISO A ABONOS 
+if (!$tiene_permiso_abonos) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+//PERMISOS A PRESTAMOS CANCELADOS
+if (!$tiene_permiso_prest_cancelados) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+//PERMISOS A VER FILTROS
+if (!$tiene_permiso_ver_filtros) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+//PERMISOS A VER DESATRASAR
+if (!$tiene_permiso_desatrasar) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+//PERMISOS A VER LISTA DE PRESTAMOS
+if (!$tiene_permiso_list_de_prestamos) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+//PERMISOS PARA VER LOS LISTADOS DE CLIENTES Y REGISTRAR CLIENTES
+if (!$tiene_permiso_listar_clientes) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+//PERMISOS PARA RECAUDOS
+if (!$tiene_permiso_recaudos) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+//PERMISOS PARA VER LA CONTABILIDAD
+if (!$tiene_permiso_contabilidad) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+//PERMISOS PARA VER LA COMISION
+if (!$tiene_permiso_comision) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+//PERMISOS PARA VER PRESTAMOS CANCELADOS
+if (!$tiene_permiso_prest_cancelados) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+//PERMISOS PARA VER PRESTAMOS APAGAR SISTEMAS 
+if (!$tiene_permiso_apagar_sistema) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+//PERMISOS PARA VER LISTA DE CLAVOS 
+if (!$tiene_permiso_lista_clavos) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+//PERMISOS PARA HACER PRESTAMOS
+if (!$tiene_permiso_hacer_prestamo) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+//PERMISOS PARA  GASTOS
+if (!$tiene_permiso_gastos) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+//PERMISOS PARA  COBROS
+if (!$tiene_permiso_cobros) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+
+
+//PERMISO REGISTRO DE USUARIOS Y CRUDS USUARIOS 
+if (!$tiene_permiso_usuarios) {
+    // El usuario no tiene el permiso, redirige a una página de error o de inicio
+    header("Location: ../../../../../../Nopermiso.html");
+    exit();
+}
+?>
+
+
+
+
+//PERMISOS PARA BOTONES
+
+//PERMISO ABONOS
+
+<?php if ($tiene_permiso_abonos) : ?>
+
+<?php endif; ?>
+
+
+//PERMISOS PARA VER PRESTAMOS CANCELADOS
+<?php if ($tiene_permiso_prest_cancelados) : ?>
+
+<?php endif; ?>
+
+//PERMISOS PARA VER FILTROS
+<?php if ($tiene_permiso_ver_filtros) : ?>
+
+<?php endif; ?>
+
+//PERMISOS PARA DESATRASAR
+
+<?php if ($tiene_permiso_desatrasar) : ?>
+
+<?php endif; ?>
+
+
+//PERMISOS PARA VER LAS LISTA DE PRESTAMOS
+
+<?php if ($tiene_permiso_list_de_prestamos) : ?>
+
+<?php endif; ?>
+
+//PERMISOS PARA VER LOS LISTADOS DE CLIENTES Y REGISTRAR CLIENTES
+
+<?php if ($tiene_permiso_listar_clientes) : ?>
+
+<?php endif; ?>
+
+//PERMISOS PARA RECAUDOS
+
+<?php if ($tiene_permiso_recaudos) : ?>
+
+<?php endif; ?>
+
+
+//PERMISOS PARA VER LA CONTABILIDAD
+
+<?php if ($tiene_permiso_contabilidad) : ?>
+
+<?php endif; ?>
+
+
+//PERMISOS PARA VER LAS COMISIONES
+
+<?php if ($tiene_permiso_comision) : ?>
+
+<?php endif; ?>
+
+
+//PERMISOS PARA VER LOS PRESTAMOS CANCELADOS
+
+<?php if ($tiene_permiso_prest_cancelados) : ?>
+
+<?php endif; ?>
+
+//PERMISOS PARA APAGAR EL SISTEMA
+
+<?php if ($tiene_permiso_apagar_sistema) : ?>
+
+<?php endif; ?>
+
+//PERMISOS PARA VER LA LISTAS DE CLAVOS
+
+<?php if ($tiene_permiso_lista_clavos) : ?>
+
+<?php endif; ?>
+
+//PERMISOS PARA HACER PRESTAMOS
+
+<?php if ($tiene_permiso_hacer_prestamo) : ?>
+
+
+<?php endif; ?>
+
+//PERMISOS PARA EL APARTADO GASTOS
+<?php if ($tiene_permiso_gastos) : ?>
+
+<?php endif; ?>
+
+//PERMISOD PARA EL APARTADO COBROS
+<?php if ($tiene_permiso_cobros) : ?>
+
+<?php endif; ?>
+
+//PERMISOS A USUARIOS
+<?php if ($tiene_permiso_usuarios) : ?>
+
+<?php endif; ?>
+
+// PERMISO A PAGAR EN ABONOS
+<?php if ($tiene_permiso_pagar) : ?>
+
+<?php endif; ?>
+
+// PERMISO A NO PAGO EN ABONOS
+<?php if ($tiene_permiso_no_pago) : ?>
+
+<?php endif; ?>
+
+//PERMIOS A MAS TARDE EN ABONOS
+<?php if ($tiene_permiso_mas_tarde) : ?>
+
+<?php endif; ?>

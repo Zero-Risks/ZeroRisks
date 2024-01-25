@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+main{
+    padding: 20px;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background: #cce4e1;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+.botonn {
+    background-color: rgb(131, 127, 127);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.botonn:hover {
+    background-color: #888;
+}
+
+
+
+/* Estilos para el nombre de usuario y rol */
+.nombre-usuario {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    color: blue;
+    max-width: 200px;
+    word-wrap: break-word;
+  }
+  
+  .nombre-usuario span {
+    color: grey;
+  }
+
+
+  .menu__side {
+    width: 80px;
+    height: 100%;
+    background: rgb(127, 131, 130);
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 18px;
+    z-index: 300;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-right: 20px solid rgb(131, 127, 127);
+    transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+/* //modal  */
+
+/* Estilo para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para el contenido del modal */
+.modal-content {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto; /* Esto centrará el contenido del modal horizontalmente */
+}
+
+/* Botón para cerrar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Botón general del modal */
+.modal button {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.modal button:hover {
+    background-color: #0056b3;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ccece9;
+}
+
+
+/* ESTILOS PARA EL CONTENIDOD DE LA PAGINA */
+  
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007bff;
+}
+
+.form-container label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form-container select,
+.form-container input[type="text"],
+.form-container input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent url('arrow.png') no-repeat scroll right center;
+}
+
+.result-container {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.result-container h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.result-container p {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.calcular-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.calcular-button:hover {
+    background-color: #0056b3;
+}
+/* Estilos para el campo de entrada de fecha de inicio */
+#fecha_inicio {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+  
+  /* Estilos para la etiqueta asociada al campo de entrada */
+  label[for="fecha_inicio"] {
+    font-weight: bold;
+    display: block; /* Hace que la etiqueta ocupe toda la línea */
+    margin-bottom: 5px;
+  }
+@media screen and (max-width: 600px) {
+    .cuadros-container {
+        flex-direction: column;
+    }
+
+    .cuadro {
+        width: 100%;
+        max-width: 100%;
+    }
+   
+        .body_move{
+            margin-left: 0px;
+        }
+    
+        .menu__side_move{
+            width: 80px;
+            left: -80px;
+        }
+    
+    
+}

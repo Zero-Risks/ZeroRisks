@@ -1,0 +1,28 @@
+/* Estilos para el nombre de usuario y rol */
+.nombre-usuario {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    color: blue;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+.nombre-usuario span {
+    color: grey;
+}
+
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto; /* Agrega desplazamiento horizontal en pantallas pequeñas */
+}
+ 
+.table-scroll-container {
+    overflow-x: auto; /* Habilita el desplazamiento horizontal */
+    margin-top: 20px;
+}

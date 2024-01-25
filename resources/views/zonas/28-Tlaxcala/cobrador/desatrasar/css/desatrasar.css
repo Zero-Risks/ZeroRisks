@@ -1,0 +1,235 @@
+/* Estilos Generales */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+.boton-contenedor {
+    text-align: right; /* Alinear el contenido a la derecha */
+    padding-right: 260px; /* Espacio a la derecha para no pegar el botón al borde */
+    
+}
+.btn-editar-prestamo {
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Remover subrayado del texto */
+    display: inline-block; /* Hacer que se comporte como un botón */
+    font-size: 16px; /* Tamaño del texto */
+    margin: 4px 2px; /* Margen alrededor del botón */
+    transition-duration: 0.4s; /* Duración de la transición al cambiar de estado */
+    cursor: pointer; /* Cambiar el cursor a una mano al pasar sobre el botón */
+    border: none; /* Remover el borde */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.btn-editar-prestamo:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+    color: white; /* Color del texto al pasar el mouse */
+}
+
+/* Estilos para el botón más pequeño */
+.botonn {
+    display: inline-block;
+    padding: 5px 10px; /* Tamaño más pequeño del botón */
+    background-color: #6494b4; /* Cambia el color de fondo a tu preferencia */
+    color: #fff; /* Cambia el color del texto a tu preferencia */
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.botonn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Estilos para el ícono */
+.fa-right-to-bracket {
+    margin-right: 5px;
+}
+
+/* Estilos para el texto dentro del botón */
+.spann {
+    font-weight: bold;
+}
+
+/* Estilos del Contenedor */
+.container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Títulos y Encabezados */
+h2 {
+    color: #4a90e2;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilos del Formulario */
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Campos de Entrada y Selectores */
+input[type="number"],
+input[type="date"],
+select.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    box-sizing: border-box;
+}
+
+/* Botones */
+button.btn-primary {
+    background-color: #4a90e2;
+    border-color: #4a90e2;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+button.btn-primary:hover {
+    background-color: #357abd;
+    border-color: #357abd;
+}
+
+/* Estilos para los Formularios de Cuotas */
+.cuota-group {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.cuota-group h5 {
+    margin-bottom: 10px;
+    color: #4a90e2;
+}
+
+.cuota-group .form-row .col {
+    margin-bottom: 10px;
+}
+
+/* Estilos para el campo del total de cuotas */
+.total-cuotas {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.total-cuotas span {
+    font-size: 24px;
+    color: #a72828; 
+    font-weight: bold;
+}
+
+.total-label {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.modal {
+    z-index: 1050; /* Bootstrap normalmente usa este valor, pero puedes intentar con un número más alto si es necesario */
+}
+
+/* Estilo para el fondo oscuro detrás del modal */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Estilo para el contenido del modal */
+.modal-content {
+    border-radius: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el encabezado del modal */
+.modal-header {
+    background-color: #007bff;
+    color: #fff;
+    border-bottom: none;
+    padding: 15px;
+}
+
+/* Estilo para el título del modal */
+.modal-title {
+    font-size: 1.25rem;
+}
+
+/* Estilo para el cuerpo del modal */
+.modal-body {
+    padding: 15px;
+}
+
+/* Estilo para el pie del modal */
+.modal-footer {
+    border-top: none;
+    padding: 15px;
+}
+
+/* Estilo para el botón de cerrar del modal */
+.close {
+    color: #fff;
+    opacity: 0.8;
+    font-size: 1.5rem;
+}
+
+/* Estilo para el botón de cerrar del modal al pasar el cursor */
+.close:hover {
+    opacity: 1;
+}
+
+/* Estilo para el botón de "Pagar Cuotas" */
+#botonPagarCuotas {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+}
+
+/* Estilo para el botón de "Pagar Cuotas" al pasar el cursor */
+#botonPagarCuotas:hover {
+    background-color: #218838;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    .cuota-group .form-row .col {
+        margin-bottom: 0;
+    }
+}

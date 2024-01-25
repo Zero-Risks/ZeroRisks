@@ -1,0 +1,141 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #f4f4f4; /* Color de fondo del header */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para el header */
+  display: flex;
+  justify-content: flex-end; /* Alinea los elementos al final (derecha) */
+  align-items: center;
+}
+
+.nombre-usuario {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f8f9fa;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    color: blue;
+    max-width: 200px;
+    word-wrap: break-word;
+  }
+  
+  .nombre-usuario span {
+    color: grey;
+  }
+
+.botonn {
+  display: flex-end;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff; /* Color de fondo del botón */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  transition: background-color 0.3s;
+}
+
+.botonn:hover {
+  background-color: #0056b3; /* Color al pasar el mouse */
+}
+
+.botonn i {
+  margin-right: 5px; /* Espacio entre el ícono y el texto */
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.estado-actual {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  color: #db0e0e;
+}
+
+.form-estado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.radio-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-group label {
+  margin: 10px;
+  font-size: 1em;
+  background-color: #e7e7e7;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.radio-group label:hover {
+  background-color: #d4d4d4;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+button {
+  cursor: pointer;
+  background-color: rgb(24, 35, 184);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #585c59;
+}
+.mensaje-confirmacion {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(59, 187, 176);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    margin: 10px;
+  }
+
+  .radio-group {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .radio-group label {
+    width: 45%;
+    text-align: center;
+  }
+}

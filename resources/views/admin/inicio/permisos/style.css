@@ -1,0 +1,154 @@
+/* Reset básico y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f7; /* Fondo sutilmente diferente para un aspecto más moderno */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333333;
+    line-height: 1.6;
+}
+.header {
+    position: fixed; /* Fija el encabezado en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa60; /* Color de fondo, puedes cambiarlo */
+    padding: 10px; /* Espaciado alrededor del botón */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para resaltar */
+    z-index: 1000; /* Asegura que el encabezado esté sobre otros elementos */
+}
+
+.btn-inicio {
+    color: white; /* Color del texto del botón */
+    background-color: #007bff; /* Color de fondo del botón, azul en este caso */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    text-decoration: none; /* Elimina el subrayado del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.btn-inicio:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+/* Contenedor principal */
+.container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Tarjeta */
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); /* Sombra más suave y extensa */
+    overflow: hidden; /* Para bordes redondeados en el encabezado y el cuerpo */
+}
+
+/* Encabezado de la tarjeta */
+.card-header {
+    background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%); /* Gradiente moderno */
+    color: #ffffff;
+    padding: 20px;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+    padding: 25px;
+}
+
+/* Estilo de formularios */
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #4a4a4a;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 9px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+    background-color: #fafafa; /* Ligero fondo para destacar el campo */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Suave transición para enfoque */
+}
+
+.form-control:focus {
+    border-color: #6a11cb; /* Color de enfoque que coincide con el gradiente */
+    box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.25); /* Sombra de enfoque suave */
+}
+
+/* Estilo de botones */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #6a11cb;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #5d0fbd; /* Un poco más oscuro al pasar el ratón */
+    border-color: #5d0fbd;
+}
+
+.descripcion-larga {
+    max-width: 250px; 
+    word-wrap: break-word;
+}
+
+.responsive-table {
+    width: 100%;
+    margin-bottom: 1rem;
+    overflow-x: auto; /* Hace que la tabla sea desplazable horizontalmente */
+}
+/* Estilos para mensajes de éxito */
+.success-message {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+/* Estilos para mensajes de error */
+.error-message {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .responsive-table {
+        -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en iOS */
+    }
+
+    .descripcion-larga {
+        max-width: none; /* Elimina el ancho máximo para descripciones en móviles */
+        white-space: normal; /* Permite que el texto se ajuste naturalmente */
+    }
+}

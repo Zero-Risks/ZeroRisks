@@ -1,0 +1,87 @@
+      /* Estilo de la barra de navegación */
+      .navbar {
+          background-color: #90b9e0;
+      }
+
+
+      .navbar-brand {
+          color: #fff;
+          font-weight: bold;
+          font-size: 15px;
+          padding: 10px 20px;
+          border-radius: 50px;
+          background-color: #007bff;
+          text-decoration: none;
+          transition: background-color 0.3s ease;
+
+      }
+
+      .navbar-brand:hover {
+          background-color: #0056b3;
+
+      }
+
+      .navbar-brand:hover {
+          color: #007bff;
+      }
+
+      .navbar-text {
+          color: #fff;
+          font-weight: bold;
+      }
+
+      /* Estilo para el nombre de usuario */
+      .username {
+          font-weight: bold;
+          margin-left: 10px;
+      }
+
+      /* Estilo para el botón "Volver al Inicio" */
+      .btn-inicio {
+          background-color: #007bff;
+          color: #fff;
+          font-weight: bold;
+          border: none;
+          border-radius: 50px;
+          padding: 10px 20px;
+      }
+
+      .btn-inicio:hover {
+          background-color: #0056b3;
+      }
+
+      /* Estilo para el botón "Buscar" */
+      #search-button {
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          border-radius: 0 5px 5px 0;
+          padding: 10px 20px;
+          cursor: pointer;
+      }
+
+      #search-button:hover {
+          background-color: #0056b3;
+      }
+
+      @media screen and (max-width: 600px) {
+          .cuadros-container {
+              flex-direction: column;
+          }
+
+          .cuadro {
+              width: 100%;
+              max-width: 100%;
+          }
+
+          .body_move {
+              margin-left: 0px;
+          }
+
+          .menu__side_move {
+              width: 80px;
+              left: -80px;
+          }
+
+
+      }

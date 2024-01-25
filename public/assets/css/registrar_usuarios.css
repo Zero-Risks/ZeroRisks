@@ -1,0 +1,61 @@
+  body {
+      background-color: #f0f0f0;
+  }
+
+  .container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .container h2 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 20px;
+  }
+
+  .form-group label {
+      font-weight: bold;
+      color: #007bff;
+  }
+
+  .btn-primary {
+      background-color: #007bff;
+      border: none;
+      transition: background-color 0.3s;
+  }
+
+  .btn-primary:hover {
+      background-color: #0056b3;
+  }
+
+  .btn-secondary {
+      background-color: #6c757d;
+      border: none;
+      transition: background-color 0.3s;
+  }
+
+  .btn-secondary:hover {
+      background-color: #495057;
+  }
+
+  .nombre-usuario {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #007bff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      color: #ffffff;
+      max-width: 200px;
+      word-wrap: break-word;
+  }
+
+  .nombre-usuario span {
+      color: #f8f9fa;
+  }

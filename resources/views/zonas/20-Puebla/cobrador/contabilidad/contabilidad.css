@@ -1,0 +1,139 @@
+/* Estilos generales */
+body {
+    background-color: #eef1f5; /* Color de fondo general */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y limpia */
+    color: #333333; /* Color de texto principal */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ajuste de caja para dimensiones consistentes */
+}
+header {
+    background: #ada6a6;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  /* Estilos para el nombre de usuario y rol */
+  .nombre-usuario {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    color: blue;
+    max-width: 200px;
+    word-wrap: break-word;
+  }
+  
+  .nombre-usuario span {
+    color: grey;
+  }
+  
+  header a {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(131, 127, 127);
+    color: #fff;
+    margin-right: 5px;
+  }
+  
+
+
+/* Contenedor principal */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    width: 90%; /* Ancho basado en porcentaje para responsividad */
+    max-width: 800px; /* Ancho máximo del contenedor */
+}
+
+h1 {
+    color: #0056b3; /* Color distintivo para el título */
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em; /* Tamaño más adaptable para el título */
+}
+
+/* Estilos para formularios */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control, .btn {
+    width: 100%; /* Ancho completo para mayor accesibilidad */
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1em;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    color: #495057;
+}
+
+/* Botones */
+.btn {
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #005ec2;
+    border-color: #0056b3;
+    box-shadow: 0 2px 4px rgba(0, 94, 194, 0.4);
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover, .btn-success:focus {
+    background-color: #218838;
+    border-color: #1e7e34;
+    box-shadow: 0 2px 4px rgba(33, 136, 56, 0.4);
+}
+
+/* Estilos para la tabla */
+.table {
+    margin-top: 30px;
+    width: 100%; /* Ancho completo para responsividad */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: left; /* Alineación para mejorar la legibilidad */
+    border-bottom: 1px solid #ddd;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em; /* Tamaño más pequeño para el título en dispositivos móviles */
+    }
+
+    .container {
+        padding: 20px; /* Menos padding en dispositivos móviles */
+    }
+
+    .form-group, .btn {
+        margin-bottom: 15px; /* Menor espacio entre elementos en dispositivos móviles */
+    }
+}

@@ -1,0 +1,57 @@
+body {
+    background-color: #f4f4f4;
+    padding-top: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(253, 253, 253, 0.1);
+}
+
+h1, h2 {
+    color: #000000;
+}
+
+#filter-form {
+    margin-bottom: 30px;
+}
+
+#filter-form .row {
+    align-items: end;
+}
+
+.table {
+    margin-top: 20px;
+}
+.mb-3 {
+    background-color: #f2f2f2; /* Fondo gris claro */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px; /* Margen inferior, ajusta según necesidad */
+}
+
+.mb-3 h3 {
+    color: #ffffff; /* Color de texto oscuro */
+    margin-bottom: 5px; /* Espacio debajo del encabezado */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #filter-form .row {
+        flex-direction: column;
+    }
+
+    #filter-form .col {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    #filter-form button {
+        width: 100%;
+    }
+}

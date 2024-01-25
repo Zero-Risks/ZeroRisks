@@ -1,0 +1,139 @@
+/* Estilo general del cuerpo y el formulario */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilos para el nombre de usuario y rol */
+.nombre-usuario {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    color: blue;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+.nombre-usuario span {
+    color: grey;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Estilo para el título del formulario */
+.h11 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilo para las etiquetas */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Estilo para los campos de entrada y selección */
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilo para el contenedor de acciones del formulario */
+.form-actions {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* Estilo para el botón de envío */
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Estilo del botón al pasar el ratón por encima */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el enlace de cancelar */
+.back-link1 {
+    color: #007bff;
+    text-decoration: none;
+    padding: 10px 20px; 
+    display: inline-block; 
+}
+
+/* Estilo del enlace al pasar el ratón por encima */
+.back-link1:hover {
+    text-decoration: underline;
+}
+
+
+/* Estilo para el enlace de volver atrás */
+.back-link1 {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    border: 1px solid #74d8d8;
+    background-color: #a9f0f0;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.back-link1:hover {
+    background-color: #2cc0c0;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        justify-content: flex-start; 
+    } 
+
+    form {
+        width: calc(100% - 40px); /* Ajustar el ancho del formulario */ 
+    }
+}
+
+/* Media query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .nombre-usuario {
+        font-size: 14px; /* Reducir el tamaño de la fuente */
+        padding: 8px; /* Reducir el padding */
+    }
+}

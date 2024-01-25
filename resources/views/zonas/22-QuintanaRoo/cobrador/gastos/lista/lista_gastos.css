@@ -1,0 +1,189 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #eaeaea;
+}
+
+.toolbar {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo general para el select */
+.Lista_total {
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    font-family: Arial, sans-serif; /* Tipo de letra */
+    color: #333; /* Color del texto */
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2); /* Sombra ligera */
+    width: 10%; 
+    -webkit-appearance: none;  
+    -moz-appearance: none;  
+    appearance: none;  
+}
+
+/* Estilo para las opciones */
+.lista_enlace {
+    font-family: Arial, sans-serif; 
+    color: #333; 
+    background-color: #f8f8f8; 
+}
+
+/* Estilo para los enlaces dentro de las opciones */
+.lista_enlace a {
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+    color: #0066cc; /* Color de los enlaces */
+}
+
+/* Estilo para el título dentro de las opciones */
+.lista_enlace h1 {
+    font-size: 16px; /* Tamaño de letra para el título */
+    margin: 0; /* Quitar márgenes */
+}
+
+
+.add-button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.add-button:hover {
+    background-color: #4cae4c;
+}
+
+.filter-dropdown {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    /* Espacio entre filtros y botón */
+}
+
+.filter-dropdown label {
+    margin-right: 10px;
+}
+
+.filter-dropdown select,
+.filter-input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-right: 10px;
+    /* Espacio entre elementos del filtro */
+}
+
+/* Estilos adicionales para mejorar la apariencia y el diseño */
+.filter-input[type="text"] {
+    width: 200px;
+    /* Ancho específico para los campos de texto */
+}
+
+.filter-input[type="date"] {
+    width: 180px;
+    /* Ancho específico para el campo de fecha */
+}
+
+#apply-filters {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#apply-filters:hover {
+    background-color: #0056b3;
+}
+
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto; /* Agrega desplazamiento horizontal en pantallas pequeñas */
+}
+ 
+.table-scroll-container {
+    overflow-x: auto; /* Habilita el desplazamiento horizontal */
+    margin-top: 20px;
+}
+
+.gastos-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gastos-table thead {
+    background-color: #f0f0f0;
+}
+
+.gastos-table th,
+.gastos-table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.gastos-table th {
+    position: sticky;
+    top: 0;
+    background-color: #f0f0f0;
+    z-index: 10;
+}
+
+.gastos-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Menos padding en pantallas pequeñas */
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px; /* Menos padding en el contenedor */
+    }
+
+    .Lista_total {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .add-button,
+    #apply-filters {
+        font-size: 14px; /* Tamaño de fuente más pequeño para botones */
+        padding: 8px 10px; /* Menos padding para botones */
+        margin-bottom: 10px; /* Espacio después de los botones */
+    }
+
+    .filter-input,
+    .filter-dropdown select {
+        font-size: 14px; /* Tamaño de fuente más pequeño para los campos de entrada */
+        padding: 6px; /* Menos padding para los campos de entrada */
+        margin-bottom: 10px; /* Espacio después de los campos de entrada */
+    }
+
+    .filter-input[type="text"],
+    .filter-input[type="date"] {
+        width: auto; /* Ancho automático para aprovechar el espacio disponible */
+    }
+}
