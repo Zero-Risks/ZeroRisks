@@ -69,27 +69,27 @@ if (!isset($_SESSION["usuario_id"])) {
 
 <body id="body">
 
-<header class="bg-white shadow-sm mb-4">
+    <header class="bg-white shadow-sm mb-4">
 
-<div class="container d-flex justify-content-between align-items-center py-2">
-   <div class="container mt-3">
-<a href="../inicio/inicio.php" class="btn btn-secondary">Volver al Inicio</a>
-</div>
-    <div class="card" style="max-width: 180px; max-height: 75px;"> <!-- Ajusta el ancho máximo y el alto máximo de la tarjeta según tus preferencias -->
-        <div class="card-body">
-            <?php if (isset($_SESSION["nombre_usuario"])) : ?>
-                <p class="card-text" style="font-size: 15px;"> <!-- Ajusta el tamaño de fuente según tus preferencias -->
-                    <span style="color: #6c757d;"> <!-- Gris de Bootstrap, puedes ajustar el código de color según sea necesario -->
-                        <?php echo htmlspecialchars($_SESSION["nombre_usuario"]); ?>
-                    </span>
-                    <span style="color: black;"> | </span> <!-- Divisor negro -->
-                    <span class="text-primary">Admin</span> <!-- Texto azul de Bootstrap -->
-                </p>
-            <?php endif; ?>
+        <div class="container d-flex justify-content-between align-items-center py-2">
+            <div class="container mt-3">
+                <a href="../inicio/inicio.php" class="btn btn-secondary">Volver al Inicio</a>
+            </div>
+            <div class="card" style="max-width: 180px; max-height: 75px;"> <!-- Ajusta el ancho máximo y el alto máximo de la tarjeta según tus preferencias -->
+                <div class="card-body">
+                    <?php if (isset($_SESSION["nombre_usuario"])) : ?>
+                        <p class="card-text" style="font-size: 15px;"> <!-- Ajusta el tamaño de fuente según tus preferencias -->
+                            <span style="color: #6c757d;"> <!-- Gris de Bootstrap, puedes ajustar el código de color según sea necesario -->
+                                <?php echo htmlspecialchars($_SESSION["nombre_usuario"]); ?>
+                            </span>
+                            <span style="color: black;"> | </span> <!-- Divisor negro -->
+                            <span class="text-primary">Admin</span> <!-- Texto azul de Bootstrap -->
+                        </p>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</header>
+    </header>
 
     <main class="form-container">
         <h1 class="form-title">Registro de Clientes</h1>
@@ -150,7 +150,7 @@ if (!isset($_SESSION["usuario_id"])) {
                         // Incluye el archivo de conexión a la base de datos
                         include("../../../../controllers/conexion.php");
                         // Consulta SQL para obtener las zonas
-                        $consultaZonas = "SELECT ID, Nombre FROM zonas WHERE Nombre IN ('Puebla', 'Chihuahua', 'Quintana Roo','Tlaxcala')";
+                        $consultaZonas = "SELECT ID, Nombre FROM zonas WHERE Nombre IN ('Medellín', 'Bello', 'Envigado')";
                         $resultZonas = mysqli_query($conexion, $consultaZonas);
 
                         // Inicializa un arreglo para almacenar las opciones

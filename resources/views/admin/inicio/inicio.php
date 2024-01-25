@@ -195,12 +195,20 @@ date_default_timezone_set('America/Bogota');
                 <?php if ($tiene_permiso_lista_clavos) : ?>
                     <div class="cuadro cuadro-2">
                         <div class="cuadro-1-1">
-                            <a href="../clavos/clavos.php" class="titulo">Clavos V2</a>
+                            <a href="../clavos/clavos.php" class="titulo">Morosos V2</a>
                             <p>Version beta v2</p>
                         </div>
                     </div>
-                    <?php endif; ?>
-               
+                <?php endif; ?>
+                <?php if ($tiene_permiso_lista_clavos) : ?>
+                    <div class="cuadro cuadro-2">
+                        <div class="cuadro-1-1">
+                            <a href="../clavos/clavos.php" class="titulo">m V2</a>
+                            <p>Version beta v2</p>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
 
                 <?php if ($tiene_permiso_comision) : ?>
                     <div class="cuadro cuadro-4">

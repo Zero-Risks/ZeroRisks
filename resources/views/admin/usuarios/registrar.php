@@ -71,27 +71,33 @@ date_default_timezone_set('America/Bogota');
 
 <body>
 
-<header class="bg-white shadow-sm mb-4">
+    <header>
+        <div class="container d-flex justify-content-between align-items-center py-2">
 
-<div class="container d-flex justify-content-between align-items-center py-2">
-   <div class="container mt-3">
-<a href="../inicio/inicio.php" class="btn btn-secondary">Volver al Inicio</a>
-</div>
-    <div class="card" style="max-width: 180px; max-height: 75px;"> <!-- Ajusta el ancho máximo y el alto máximo de la tarjeta según tus preferencias -->
-        <div class="card-body">
-            <?php if (isset($_SESSION["nombre_usuario"])) : ?>
-                <p class="card-text" style="font-size: 15px;"> <!-- Ajusta el tamaño de fuente según tus preferencias -->
-                    <span style="color: #6c757d;"> <!-- Gris de Bootstrap, puedes ajustar el código de color según sea necesario -->
-                        <?php echo htmlspecialchars($_SESSION["nombre_usuario"]); ?>
-                    </span>
-                    <span style="color: black;"> | </span> <!-- Divisor negro -->
-                    <span class="text-primary">Admin</span> <!-- Texto azul de Bootstrap -->
-                </p>
-            <?php endif; ?>
+            <!-- Contenedor del select con tamaño ajustable y botones al lado -->
+            <div class="d-flex align-items-center">
+                <!-- Botones de Volver y Agregar Retiro con margen significativamente aumentado -->
+                <div style="margin-left: 15px;">
+                    <a href="../inicio/inicio.php" class="btn btn-outline-primary me-2">Volver a Inicio</a>
+                </div>
+            </div>
+
+            <!-- Contenedor de la tarjeta -->
+            <div class="card">
+                <div class="card-body">
+                    <?php if (isset($_SESSION["nombre_usuario"])) : ?>
+                        <p class="card-text">
+                            <span style="color: #6c757d;">
+                                <?php echo htmlspecialchars($_SESSION["nombre_usuario"]); ?>
+                            </span>
+                            <span style="color: black;"> | </span>
+                            <span class="text-primary">Admin</span>
+                        </p>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</header>
+    </header>
 
     <main class="container mt-4">
         <h2 class="text-center">Registro de Usuario</h2>
@@ -120,7 +126,7 @@ date_default_timezone_set('America/Bogota');
                         // Incluye el archivo de conexión a la base de datos
                         include("../../../../controllers/conexion.php");
                         // Consulta SQL para obtener las zonas
-                        $consultaZonas = "SELECT ID, Nombre FROM zonas WHERE Nombre IN ('Chihuahua', 'Puebla', 'Quintana Roo', 'Tlaxcala')";
+                        $consultaZonas = "SELECT ID, Nombre FROM zonas WHERE Nombre IN ('Medellín', 'Bello', 'Envigado')";
                         $resultZonas = mysqli_query($conexion, $consultaZonas);
                         // Genera las opciones del menú desplegable para Zona
                         while ($row = mysqli_fetch_assoc($resultZonas)) {
@@ -146,7 +152,7 @@ date_default_timezone_set('America/Bogota');
                 </div>
 
                 <div class="col-12 text-center">
-                    <button type="submit" name="registrar_usuario" class="btn btn-primary mt-3">Registrar</button> 
+                    <button type="submit" name="registrar_usuario" class="btn btn-primary mt-3">Registrar</button>
                 </div>
             </div>
         </form>

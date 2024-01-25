@@ -59,8 +59,8 @@ function insertarEnFacturas($conexion, $idCliente, $montoAntesDePago, $montoPaga
 {
     $fecha = date('Y-m-d'); // Fecha actual
 
-    $consulta = $conexion->prepare("INSERT INTO facturas (cliente_id, monto, fecha, monto_pagado, monto_deuda, id_prestamos, IDUsuario) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $consulta->bind_param("idsssii", $idCliente, $montoAntesDePago, $fecha, $montoPagado, $montoDeuda, $idPrestamo, $idUsuario);
+    $consulta = $conexion->prepare("INSERT INTO facturas (cliente_id, monto, fecha, monto_pagado, monto_deuda, id_prestamos) VALUES (?, ?, ?, ?, ?, ?)");
+    $consulta->bind_param("idsssi", $idCliente, $montoAntesDePago, $fecha, $montoPagado, $montoDeuda, $idPrestamo,);
 
     if (!$consulta->execute()) {
         echo "Error al insertar en facturas: " . $consulta->error;
@@ -148,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             }
         }
- 
+
         if ($zonaCliente === null) {
             echo "Error: Nombre de zona no disponible.";
             exit();
